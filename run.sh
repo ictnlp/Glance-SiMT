@@ -1,11 +1,11 @@
 export CUDA_VISIBLE_DEVICES=0,1,2,3
 
-TGT_FILE=L9_K8
-MODELFILE=/data/guoshoutao/HMT_glancing_futture/checkpoints/${TGT_FILE}
-DATAFILE=/data/guoshoutao/wmt15_de_en_bpe32k
+TGT_FILE=Path_to_Target
+MODELFILE=Path_to_Model
+DATAFILE=Path_to_Data
 
-FIRST_READ=9
-CANDS_PER_TOKEN=8
+FIRST_READ=1
+CANDS_PER_TOKEN=4
 
 python train.py --ddp-backend=no_c10d ${DATAFILE} --arch transformer --share-all-embeddings \
  --optimizer adam \
