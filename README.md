@@ -28,18 +28,18 @@ For WMT15 German-English, we tokenize the corpus via [mosesdecoder/scripts/token
 Then, we process the data into the fairseq format, adding ```--joined-dictionary``` for WMT15 German-English:
 
 ```
-src=SOURCE_LANGUAGE
-tgt=TARGET_LANGUAGE
-train_data=PATH_TO_TRAIN_DATA
-vaild_data=PATH_TO_VALID_DATA
-test_data=PATH_TO_TEST_DATA
-data=PATH_TO_PROCESSED_DATA
+SRC=source_language
+TGT=target_language
+TRAIN_DATA=path_to_training_data
+VALID_DATA=path_to_valid_data
+TEST_DATA=path_to_test_data
+DATA=path_to_processed_data
 
 # add --joined-dictionary for WMT15 German-English
-fairseq-preprocess --source-lang ${src} --target-lang ${tgt} \
-    --trainpref ${train_data} --validpref ${vaild_data} \
-    --testpref ${test_data}\
-    --destdir ${data} \
+fairseq-preprocess --source-lang ${SRC} --target-lang ${TGT} \
+    --trainpref ${TRAIN_DATA} --validpref ${VALID_DATA} \
+    --testpref ${TEST_DATA}\
+    --destdir ${DATA}
 ```
 
 ### Glancing Future Training
